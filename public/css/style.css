@@ -1,0 +1,205 @@
+:root{
+    /** Theme primary colors */
+    --cffy-theme-primary-a0: #ff8000;
+    --cffy-theme-primary-a10: #ff8e39;
+    --cffy-theme-primary-a20: #ff9c56;
+    --cffy-theme-primary-a30: #ffa96e;
+    --cffy-theme-primary-a40: #ffb685;
+    --cffy-theme-primary-a50: #ffc29a;
+
+    /** Theme surface colors */
+    --cffy-theme-surface-a0: #1e1e2c;
+    --cffy-theme-surface-a10: #31313e;
+    --cffy-theme-surface-a20: #444551;
+    --cffy-theme-surface-a30: #595965;
+    --cffy-theme-surface-a40: #6f6f79;
+    --cffy-theme-surface-a50: #85858e;
+
+    /** Theme tonal surface colors */
+    --cffy-theme-surface-tonal-a0: #32282f;
+    --cffy-theme-surface-tonal-a10: #443a41;
+    --cffy-theme-surface-tonal-a20: #564d54;
+    --cffy-theme-surface-tonal-a30: #6a6167;
+    --cffy-theme-surface-tonal-a40: #7d767b;
+    --cffy-theme-surface-tonal-a50: #928c90;
+
+    /** Success colors */
+    --cffy-theme-success-a0: #7dff95;
+    --cffy-theme-success-a10: #9dffac;
+    --cffy-theme-success-a20: #b8ffc1;
+
+    /** Warning colors */
+    --cffy-theme-warning-a0: #ffbc5e;
+    --cffy-theme-warning-a10: #ffca83;
+    --cffy-theme-warning-a20: #ffd8a4;
+
+    /** Danger colors */
+    --cffy-theme-danger-a0: #ff8080;
+    --cffy-theme-danger-a10: #ff9b99;
+    --cffy-theme-danger-a20: #ffb5b2;
+
+    /** Info colors */
+    --cffy-theme-info-a0: #87d1ff;
+    --cffy-theme-info-a10: #a1dbff;
+    --cffy-theme-info-a20: #b9e4ff;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--cffy-theme-surface-a0);
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+}
+
+main{
+    flex: 1;
+}
+
+.navbar{
+    background-color: var(--cffy-theme-surface-a10);
+}
+
+.nav-link{
+    color: var(--cffy-theme-primary-a40);
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: #fff;
+}
+
+.nav-link:focus{
+    color: var(--cffy-theme-primary-a20);
+}
+
+.dropdown-menu{
+    background-color: var(--cffy-theme-surface-a10);
+
+    .dropdown-item{
+        color: var(--cffy-theme-primary-a40);
+    }
+}
+
+footer{
+    background-color: var(--cffy-theme-surface-a10);
+    color: var(--cffy-theme-primary-a40);
+
+    #copyright{
+        color: var(--cffy-theme-primary-a40);
+    }
+}
+
+.icono{
+    color: var(--cffy-theme-primary-a50);
+    font-size: 20pt;
+}
+
+.title{
+    border-top: 1px solid var(--cffy-theme-primary-a40);
+    border-bottom: 1px solid var(--cffy-theme-primary-a40);
+
+    h2{
+        color: var(--cffy-theme-primary-a40);
+    }
+
+    animation: card_anim_left 1s ease 0s 1 normal forwards;
+}
+
+@keyframes card_anim_left {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.card{
+    background-color: var(--cffy-theme-surface-a10);
+    border: 1px solid var(--cffy-theme-primary-a40);
+    border-radius: 20px;
+
+    animation: card_anim 1s ease 0s 1 normal forwards;
+
+    .card-title{
+        color: var(--cffy-theme-primary-a40);
+    }
+
+    .card-text{
+        color: var(--cffy-theme-primary-a40);
+    }
+
+    button{
+        background-color: var(--cffy-theme-primary-a0);
+        border: none;
+    }
+
+    h2{
+        color: var(--cffy-theme-primary-a40);
+    }
+}
+
+@keyframes card_anim {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.welcome{
+    h1{
+        color: var(--cffy-theme-primary-a40);
+    }
+    p{
+        color: var(--cffy-theme-primary-a40);
+    }
+}
+
+
+label{
+    color: var(--cffy-theme-primary-a40);
+    font-weight: bold;
+}
+
+form{
+    .form-control{
+        background-color: var(--cffy-theme-surface-a10);
+        border: 1px solid var(--cffy-theme-primary-a40);
+        color: var(--cffy-theme-primary-a40);
+    }
+
+    p{
+        color: var(--cffy-theme-primary-a40);
+    }
+
+    button{
+        background-color: var(--cffy-theme-primary-a0);
+        border: none;
+        border-radius: 10px;
+        width: 60%;
+        color: var(--cffy-theme-primary-a50);
+
+    }
+}
+#carro{
+    h1{
+        color: var(--cffy-theme-primary-a40);
+    }
+    p{
+        color: var(--cffy-theme-primary-a40);
+    }
+}
+
+.terminos-condiciones{
+    color: var(--cffy-theme-primary-a40);
+}
