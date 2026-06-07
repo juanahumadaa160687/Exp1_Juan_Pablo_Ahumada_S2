@@ -8,9 +8,16 @@ form.addEventListener("submit", (e) => {
     let username = document.getElementById("username").value.trim();
     let password = document.getElementById("password").value.trim();
 
-    let users = JSON.parse(localStorage.getItem("user " + username));
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    if (users.length === 0) {
+    let user = users.find(x => x.username === username);
+
+    let user_username = user.username;
+    let user_password = user.password;
+
+    console.log(user);
+
+    if (user_username === null) {
         feedback_username.innerHTML = "El usuario no existe. Intenta nuevamente o registrate";
         feedback_username.style.display = "block";
 
@@ -20,30 +27,28 @@ form.addEventListener("submit", (e) => {
     }
 
     else {
-        for (let i = 0; i < users.length; i++) {
-            let user_username = users[i].username;
-            let user_password = users[i].password;
-            let user_role = users[i].role;
+        let user_role = user.role;
 
-            if (username === user_username && password === user_password) {
+        console.log(user_role);
+        console.log(user_username);
+        console.log(user_password);
 
-                sessionStorage.setItem("username", user_username);
-                sessionStorage.setItem("password", user_password);
-                sessionStorage.setItem("role", user_role);
+        if (username === user_username && password === user_password) {
 
-                window.location.href = "/ludus_arcanus_web/index.html";
-                return;
-            }
-            else {
-                feedback_password.innerText = "Contraseña incorrecta. Intenta nuevamente";
-                feedback_password.style.display = "block";
+            sessionStorage.setItem("username", user_username);
+            sessionStorage.setItem("password", user_password);
+            sessionStorage.setItem("role", user_role);
 
-                setTimeout(() => {
-                    feedback_username.style.display = "none";
-                }, 3500);
-            }
+            window.location.href = "index.html";
+        }
+        else {
+            feedback_password.innerText = "Contraseña incorrecta. Intenta nuevamente";
+            feedback_password.style.display = "block";
+
+            setTimeout(() => {
+                feedback_username.style.display = "none";
+            }, 3500);
         }
     }
-
 })
 

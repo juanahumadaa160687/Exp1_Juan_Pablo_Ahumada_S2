@@ -21,7 +21,9 @@ signUpForm.addEventListener("submit", function (event) {
     let confirmacion = document.getElementById("confirmPassword").value.trim();
     let role = document.getElementById("role").value.trim();
 
-    let user = JSON.parse(localStorage.getItem("user " + username));
+    let user = JSON.parse(localStorage.getItem("user " + username)) || {};
+
+    console.log(user);
 
     if (nombre === "") {
         nombre_feedback.innerText = "El nombre no puede estar vacío.";
@@ -119,18 +121,23 @@ signUpForm.addEventListener("submit", function (event) {
         }, 3500);
     }
     else {
-        let userPofile = {
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        let user = {
             nombre: nombre,
             apellido: apellido,
             username: username,
             email: email,
             fecha_nacimiento: fecha_nacimiento,
-            direction: direccion,
+            direccion: direccion,
             password: password,
             role: role
         }
 
-        localStorage.setItem("user " + username, JSON.stringify(userPofile));
+        users.push(user);
+
+        localStorage.setItem("users", JSON.stringify(users));
 
         alert("Registro exitoso. Ahora puedes iniciar sesión.");
 

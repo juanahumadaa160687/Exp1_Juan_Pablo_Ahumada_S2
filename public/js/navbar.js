@@ -5,7 +5,6 @@ let dashboard = document.getElementById("dashboard");
 
 let user = sessionStorage.getItem("username");
 
-console.log(user);
 
 if (user != null && user !== "") {
     logout.style.visibility = "visible";
@@ -13,15 +12,13 @@ if (user != null && user !== "") {
 
     if (sessionStorage.getItem("role") === "admin") {
         dashboard.style.visibility = "visible";
-        dashboard.style.display = "block";
 
-        dashboard.innerText = user;
+        dashboard.innerText = "Bienvenido " + user.toUpperCase();
     }
     else {
         profile.style.visibility = "visible";
-        profile.style.display = "block";
 
-        profile.innerText = user;
+        profile.innerText = "Bienvenido " + user.toUpperCase();
     }
 }
 

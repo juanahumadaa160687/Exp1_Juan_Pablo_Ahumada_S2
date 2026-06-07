@@ -22,7 +22,7 @@
     <!-- Favicon -->
     <link rel="icon" href="public/img/logo_ludus_b.jpg">
 
-    <title>Ludus Arcanus</title>
+    <title>Perfil de Usuario</title>
 </head>
 <body>
     <header>
@@ -55,13 +55,16 @@
                             <a class="nav-link" href="carrito.html" tabindex="-1" aria-disabled="true"><i class="fa fa-shopping-cart"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html" tabindex="-1" aria-disabled="true">Iniciar Sesión</a>
+                            <a class="nav-link" href="login.html" tabindex="-1" id="login">Iniciar Sesión</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="user-profile.html" tabindex="-1" aria-disabled="true" id="profile"></a>
+                            <a class="nav-link" href="admin_dashboard.html" tabindex="-1" id="dashboard"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" id="logout">Cerrar Sesión</a>
+                            <a class="nav-link" href="user-profile.html" tabindex="-1" id="profile"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" tabindex="-1" id="logout">Cerrar Sesión</a>
                         </li>
                     </ul>
                 </div>
@@ -72,30 +75,37 @@
     <main>
         <div class="container d-flex justify-content-center align-items-center" style="min-height: 60vh;">
             <div class="p-4" id="prof" style="width: 100%; max-width: 800px;">
-                <h2 class="mb-4 text-center" id="">Perfil de Usuario</h2>
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
+                <div class="container title p-1 mb-5 d-flex justify-content-start align-items-center">
+                    <h2>Perfil de Usuario</h2>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
                     <input type="text" class="form-control-plaintext" id="nombre" value="" name="nombre" readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="apellido" class="form-label">Apellido</label>
+                    <label for="apellido" class="form-label">Apellido:</label>
                     <input type="text" class="form-control-plaintext" id="apellido" name="apellido" value="" readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label">Username:</label>
                     <input type="text" class="form-control-plaintext" id="username" name="username" value="" readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <label for="email" class="form-label">Correo Electrónico:</label>
                     <input type="email" class="form-control-plaintext" id="email" value="" readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="direccion" class="form-label">Dirección</label>
+                    <label for="direccion" class="form-label">Dirección:</label>
                     <input type="text" class="form-control-plaintext" id="direccion" name="direccion" value="" readonly>
                 </div>
-                <div class="mb-3">
-                    <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                <div class="mb-5">
+                    <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento:</label>
                     <input type="text" class="form-control-plaintext" id="fecha_nacimiento" name="fecha_nacimiento" value="" readonly>
+                </div>
+                <div class="mb-3 d-flex justify-content-around">
+                    <button class="btn btn-primary btn-sm" id="b_pass" style="width: 25%"><i class="fa fa-key"></i> Recuperar Contraseña</button>
+                    <button class="btn btn-danger btn-sm" id="b_borrar" style="width: 20%"><i class="fa fa-trash"></i> Eliminar Cuenta</button>
                 </div>
             </div>
         </div>

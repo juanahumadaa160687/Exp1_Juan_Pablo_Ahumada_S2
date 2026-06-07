@@ -258,4 +258,23 @@ th td{
 
 #prof{
     color: var(--cffy-theme-primary-a40);
+
+    input{
+        border: none;
+        color: var(--cffy-theme-primary-a40);
+    }
+
+    input:focus{
+        color: var(--cffy-theme-primary-a40);
+        outline: none;
+        border: none;
+    }
+}
+
+#productos{
+    color: var(--cffy-theme-primary-a40);
+}
+
+th td{
+    color: var(--cffy-theme-primary-a40);
 }
