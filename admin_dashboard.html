@@ -83,6 +83,36 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row" id="productos">
             <div class="col-md-12">
+                <h2>Nuevo Administrador</h2>
+                <br>
+                <form class="row g-3" id="admin_form">
+                    <div class="col-md-6">
+                        <label for="emailInput" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="emailInput" placeholder="Email">
+                        <div class="invalid-feedback" id="email_feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="usernameInput" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="usernameInput" placeholder="Username">
+                        <div class="invalid-feedback" id="username_feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="passwordInput" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña">
+                        <div class="form-text">La contraseña debe tener al menos 8 caracteres, mayúsculas, minúsculas, dígitos y caracteres especiales (@$!%*?&)</div>
+                        <div class="invalid-feedback" id="password_feedback"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="confirmPasswordInput" class="form-label">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirmar Contraseña">
+                        <div class="invalid-feedback" id="confirm_password_feedback"></div>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-end mt-4">
+                        <button type="submit" class="pt-2 pb-2" style="width: 20%">Agregar Administrador</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12">
                 <h2>Ingresar Producto</h2>
                 <br>
                 <form class="row g-3" id="product_form">

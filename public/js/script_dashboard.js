@@ -87,3 +87,70 @@ function deleteProd(id) {
     window.location.reload();
 
 }
+
+let admin_form = document.getElementById('admin_form');
+
+let email_feedback = document.getElementById('email_feedback');
+let username_feedback = document.getElementById('username_feedback');
+let password_feedback = document.getElementById('password_feedback');
+let confirm_password_feedback = document.getElementById('confirm_password_feedback');
+
+admin_form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    let email = document.getElementById('emailInput').value.trim();
+    let username = document.getElementById('usernameInput').value.trim();
+    let password = document.getElementById('passwordInput').value.trim();
+    let confirmPassword = document.getElementById('confirmPasswordInput').value.trim();
+
+    if (password !== confirmPassword) {
+        confirm_password_feedback.style.display = 'block';
+        confirm_password_feedback.innerText = 'Las contraseñas no coinciden';
+
+        setTimeout(function () {
+            confirm_password_feedback.style.display = 'none';
+        }, 3500)
+    }
+    else if (email === '') {
+        email_feedback.style.display = 'block';
+        email_feedback.innerText = 'E-mail no puede estar vacío';
+
+        setTimeout(function () {
+            email_feedback.style.display = 'none';
+
+        }, 3500)
+    }
+    else if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/) || password === '') {
+        password_feedback.style.display = 'block';
+        password_feedback.innerText = 'La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales (@$!%*?&)';
+
+        setTimeout(function () {
+            email_feedback.style.display = 'none';
+        }, 3500)
+    }
+    else if (username === '') {
+        username_feedback.style.display = 'block';
+        username_feedback.innerText = 'El nombre de usuario no puede estar vacío';
+
+        setTimeout(function () {
+            username_feedback.style.display = 'none';
+        }, 3500)
+    }
+    else {
+        let admins = JSON.parse(localStorage.getItem('admins')) || [];
+
+        let admin = {
+            email: email,
+            username: username,
+            password: password
+        }
+
+        admins.push(admin);
+        localStorage.setItem('admins', JSON.stringify(admins));
+
+        alert('Administrador agregado correctamente');
+
+        window.location.href = "/ludus_arcanus_web/login.html";
+
+    }
+});
