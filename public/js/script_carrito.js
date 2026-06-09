@@ -58,7 +58,7 @@ productos_total.appendChild(total_prod);
 
 
 limpiar_carrito.addEventListener('click', () => {
-    alert("Carrito limpiado");
+    alert("Carrito vaciado");
     localStorage.removeItem('carrito');
     window.location.href="index.html";
 });
